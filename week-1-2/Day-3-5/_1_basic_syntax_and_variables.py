@@ -23,11 +23,11 @@ y = "John"
 print(x)
 print(y)
 
-#i need more info on variables in python
 # Variable Names:
 # A variable can have a short name (like x and y) or a more descriptive name (age, carname, total_volume).
 # Rules for Python variables:
 # A variable name must start with a letter or the underscore character
+#python identifier are the names which are used to define
 #The assignment operator (=) is used to assign a value to a variable.
 #The data type of the variable is determined by the value assigned to it.
 #Python has no command for declaring a variable.
@@ -38,7 +38,9 @@ print(y)
 #A variable created inside a function is available inside that function.
 #A variable created in the main body of the Python code is a global variable and belongs to the global scope.
 #Global variables are available from within any scope, global and local.
-#varibale name shouls not be a keyword
+#varibale name should not be a keyword
+#should not seperate with space
+#special symbols are not allowed
 
 #You can change the value of a variable by reassigning it. Example:
 x = 5
@@ -80,6 +82,59 @@ x = 5
 y = "John"
 print(type(x))
 print(type(y))
+
+#keywords:
+# key words are nothing but the reserved words in python
+# To fetch the reserved key words in python
+import keyword
+print("______________________keywords")
+for i in keyword.kwlist:
+    print(i)
+
+#global variables
+#varibales which are created out side of a function are called global variables
+#these are used both inside and outside of a function
+print("________________global variable example_1")
+x = "awesome"
+
+def my_func():
+    print("inside func iam",x)
+
+class my_class():
+
+    def my_func_2(self):
+        print("inside func2 iam",x)
+
+print("iam ",x)
+my_func()
+clss = my_class()
+clss.my_func_2()
+
+print("________________global variable example_2")
+
+y = "world"
+
+def sec_func():
+    print("Hello ",y,"! This is sec_func() method")
+
+def sec_func2():
+    y = "akhil"
+    global z
+    z = "reddy"
+    print("Hello ",y,"! This is sec_func2() method")
+
+class my_class2():
+    x = "jaya"
+    def my_func_3(self):
+        print("inside func3 iam", self.x)
+        print(z)
+
+sec_func()
+sec_func2()
+clsss = my_class2()
+clsss.my_func_3()
+
+
 
 
 
