@@ -1,0 +1,21 @@
+Suppose you are implementing a new feature for your product.
+Your code is in progress and suddenly a customer escalation comes.
+Because of this, you have to keep aside your new feature work for a few hours.
+You cannot commit your partial code and also cannot throw away your changes. S
+o you need some temporary space, where you can store your partial changes and later on commit it.
+
+In Git, the stash operation takes your modified tracked files, stages changes, and saves them on a stack of
+unfinished changes that you can reapply at any time.
+
+
+Now, you want to switch branches for customer escalation, but you don’t want to commit what you’ve been working on yet;
+so you’ll stash the changes. To push a new stash onto your stack, run the git stash command.
+
+    $ git stash
+    $ git stash list
+
+
+You can work on your changes and come to the original branch and apply the stash changes.
+
+    $ git stash pop
+

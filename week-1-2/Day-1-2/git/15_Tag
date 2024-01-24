@@ -1,0 +1,47 @@
+Tag operation allows giving meaningful names to a specific version in the repository.
+Suppose Tom and Jerry decide to tag their project code so that they can later access it easily.
+
+
+It is often used to mark a specific point in history that is used for a version release (e.g., a software release).
+
+
+There are two types of tags in Git: lightweight tags and annotated tags.
+
+
+Create Tags
+Let us tag the current HEAD by using the git tag command. Tom provides a tag name with -a option and provides a tag message with –m option.
+
+    tom@CentOS project]$ pwd
+    /home/tom/top_repo/project
+
+    [tom@CentOS project]$ git tag -a 'Release_1_0' -m 'Tagged basic string operation code' HEAD
+
+If you want to tag a particular commit, then use the appropriate COMMIT ID instead of the HEAD pointer.
+Tom uses the following command to push the tag into the remote repository.
+
+    [tom@CentOS project]$ git push origin tag Release_1_0
+
+
+View Tags
+Tom created tags. Now, Jerry can view all the available tags by using the Git tag command with –l option.
+
+    [jerry@CentOS project]$ pwd
+    /home/jerry/top_repo/project
+
+    [jerry@CentOS project]$ git tag -l
+    Release_1_0
+
+
+Jerry uses the Git show command followed by its tag name to view more details about tag.
+
+    [jerry@CentOS src]$ git show Release_1_0
+
+
+Delete Tags
+Tom uses the following command to delete tags from the local as well as the remote repository.
+
+    [tom@CentOS project]$ git tag -d Release_1_0
+    Deleted tag 'Release_1_0' (was 5f4a4b7)
+
+    [tom@CentOS project]$ git push origin :refs/tags/Release_1_0
+    To

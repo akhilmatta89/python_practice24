@@ -1,0 +1,9 @@
+Patch is a text file, whose contents are similar to Git diff, but along with code, it also has metadata about commits;
+e.g., commit ID, date, commit message, etc.
+We can create a patch from commits and other people can apply them to their repository.
+
+Jerry implements the strcat function for his project.
+Jerry can create a path of his code and send it to Tom. Then, he can apply the received patch to his code.
+
+Jerry uses the Git format-patch command to create a patch for the latest commit.
+If you want to create a patch for a specific commit, then use COMMIT_ID with the format-patch command.

@@ -1,0 +1,7 @@
+In the git project when you want to update some file and on the same file if some one has made soem chnages
+and you are not having the latest changes in the local and when you try to push the changes it will give you the error
+
+so avoid this before we start working on any branch we need to pull the latest changes from the remote branch and then we can start working on it
+
+To do that the command is
+    git pull origin master

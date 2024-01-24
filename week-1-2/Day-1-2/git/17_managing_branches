@@ -1,0 +1,135 @@
+Branch operation allows creating another line of development. We can use this operation to fork off the development process
+into two different directions. For example, we released a product for 6.0 version and we might want to create a branch
+so that the development of 7.0 features can be kept separate from 6.0 bug fixes.
+
+
+Create Branch
+Tom creates a new branch using the git branch <branch name> command. We can create a new branch from an existing one.
+We can use a specific commit or tag as the starting point. If any specific commit ID is not provided,
+then the branch will be created with HEAD as its starting point.
+
+    [jerry@CentOS src]$ git branch new_branch
+
+    [jerry@CentOS src]$ git branch
+    * master
+    new_branch
+
+
+Switch between Branches
+Jerry uses the git checkout command to switch between branches.
+
+    [jerry@CentOS src]$ git checkout new_branch
+    Switched to branch 'new_branch'
+    [jerry@CentOS src]$ git branch
+    master
+    * new_branch
+
+Shortcut to Create and Switch Branch
+In the above example, we have used two commands to create and switch branches, respectively.
+Git provides –b option with the checkout command;
+this operation creates a new branch and immediately switches to the new branch.
+
+    [jerry@CentOS src]$ git checkout -b test_branch
+    Switched to a new branch 'test_branch'
+
+    [jerry@CentOS src]$ git branch
+    master
+    new_branch
+    * test_branch
+
+Delete a Branch
+A branch can be deleted by providing –D option with git branch command. But before deleting the existing branch, switch to the other branch.
+
+Jerry is currently on test_branch and he wants to remove that branch. So he switches branch and deletes branch as shown below.
+
+    [jerry@CentOS src]$ git branch
+    master
+    new_branch
+    * test_branch
+
+    [jerry@CentOS src]$ git checkout master
+    Switched to branch 'master'
+
+    [jerry@CentOS src]$ git branch -D test_branch
+    Deleted branch test_branch (was 5776472).
+
+Rename a Branch
+Jerry decides to add support for wide characters in his string operations project.
+He has already created a new branch, but the branch name is not appropriate.
+So he changes the branch name by using –m option followed by the old branch name and the new branch name.
+
+    [jerry@CentOS src]$ git branch
+    * master
+    new_branch
+
+    [jerry@CentOS src]$ git branch -m new_branch wchar_support
+
+
+Merge Branches
+Jerry has completed the development of wide character support in his string operations project.
+He wants to merge the wchar_support branch with the master branch.
+He switches to the master branch and uses the git merge command to merge the wchar_support branch.
+
+    [jerry@CentOS src]$ git branch
+    master
+    * wchar_support
+
+    [jerry@CentOS src]$ git checkout master
+    Switched to branch 'master'
+
+    [jerry@CentOS src]$ git merge wchar_support
+    Updating 5776472..f1b3b0a
+    Fast-forward
+    string.c | 2 ++
+    1 file changed, 2 insertions(+)
+
+    [jerry@CentOS src]$ git branch
+    * master
+    wchar_support
+
+    [jerry@CentOS src]$ git branch -d wchar_support
+    Deleted branch wchar_support (was f1b3b0a).
+
+    [jerry@CentOS src]$ git branch
+    * master
+
+    [jerry@CentOS src]$ git log --oneline
+    f1b3b0a (HEAD -> master) Added support for wide characters
+    5776472 Added support for string concatenation
+    5bfe2a2 Added support for string comparison
+    1b15b0a Added support for string copy
+    1a2b3c4 Added support for string length
+    1234567 Initial commit
+
+    [jerry@CentOS src]$ git status
+    On branch master
+    nothing to commit, working tree clean
+
+    [jerry@CentOS src]$ git branch -d wchar_support
+    error: The branch 'wchar_support' is not fully merged.
+    If you are sure you want to delete it, run 'git branch -D wchar_support'.
+
+    [jerry@CentOS src]$ git branch -D wchar_support
+    Deleted branch wchar_support (was f1b3b0a).
+
+    [jerry@CentOS src]$ git branch
+    * master
+
+    [jerry@CentOS src]$ git log --oneline
+    f1b3b0a (HEAD -> master) Added support for wide characters
+    5776472 Added support for string concatenation
+    5bfe2a2 Added support for string comparison
+    1b15b0a Added support for string copy
+    1a2b3c4 Added support for string length
+    1234567 Initial commit
+
+
+
+Rebase Branches
+The Git rebase command is a branch merge command, but the difference is that it modifies the order of commits.
+
+The Git merge command tries to put the commits from other branches on top of the HEAD of the current local branch. For example, your local branch has commits A−>B−>C−>D and the merge branch has commits A−>B−>X−>Y, then git merge will convert the current local branch to something like A−>B−>C−>D−>X−>Y
+
+The Git rebase command tries to find out the common ancestor between the current local branch and the merge branch. It then pushes the commits to the local branch by modifying the order of commits in the current local branch. For example, if your local branch has commits A−>B−>C−>D and the merge branch has commits A−>B−>X−>Y, then Git rebase will convert the current local branch to something like A−>B−>X−>Y−>C−>D.
+
+When multiple developers work on a single remote repository, you cannot modify the order of the commits in the remote repository. In this situation, you can use rebase operation to put your local commits on top of the remote repository commits and you can push these changes.

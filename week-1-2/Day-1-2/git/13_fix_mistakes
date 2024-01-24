@@ -1,0 +1,79 @@
+To err is human. So every VCS provides a feature to fix mistakes until a certain point.
+Git provides a feature that we can use to undo the modifications that have been made to the local repository.
+
+Suppose the user accidentally does some changes to his local repository and then wants to undo these changes.
+In such cases, the revert operation plays an important role.
+
+Revert Uncommitted Changes
+Let us suppose Jerry accidentally modifies a file from his local repository. But he wants to undo his modification.
+To handle this situation, we can use the git checkout command. We can use this command to revert the contents of a file.
+
+    [jerry@CentOS src]$ pwd
+    /home/jerry/jerry_repo/project/src
+
+    [jerry@CentOS src]$ git status -s
+    M string_operations.c
+
+    [jerry@CentOS src]$ git checkout string_operations.c
+
+    [jerry@CentOS src]$ git status –s
+
+
+Further, we can use the git checkout command to obtain a deleted file from the local repository. Let us suppose Tom deletes a file from the local repository and we want this file back. We can achieve this by using the same command.
+
+    [tom@CentOS src]$ pwd
+    /home/tom/top_repo/project/src
+
+    [tom@CentOS src]$ ls -1
+    Makefile
+    string_operations.c
+
+    [tom@CentOS src]$ rm string_operations.c
+
+    [tom@CentOS src]$ ls -1
+    Makefile
+
+    [tom@CentOS src]$ git status -s
+    D string_operations.c
+Git is showing the letter D before the filename. This indicates that the file has been deleted from the local repository.
+
+    [tom@CentOS src]$ git checkout string_operations.c
+
+    [tom@CentOS src]$ ls -1
+    Makefile
+    string_operations.c
+
+    [tom@CentOS src]$ git status -s
+
+
+
+Remove Changes from Staging Area
+We have seen that when we perform an add operation, the files move from the local repository to the stating area.
+If a user accidently modifies a file and adds it into the staging area, he can revert his changes, by using the git checkout command.
+
+In Git, there is one HEAD pointer that always points to the latest commit. If you want to undo a change from the staged area,
+then you can use the git checkout command, but with the checkout command, you have to provide an additional parameter,
+i.e., the HEAD pointer. The additional commit pointer parameter instructs the git checkout command to reset the working
+tree and also to remove the staged changes.
+
+Let us suppose Tom modifies a file from his local repository. If we view the status of this file, it will show that the
+file was modified but not added into the staging area.
+
+    tom@CentOS src]$ pwd
+    /home/tom/top_repo/project/src
+    # Unmodified file
+
+    [tom@CentOS src]$ git status -s
+
+    # Modify file and view it’s status.
+    [tom@CentOS src]$ git status -s
+    M string_operations.c
+
+    [tom@CentOS src]$ git add string_operations.c
+
+
+Git status shows that the file is present in the staging area, now revert it by using the git checkout command and view the status of the reverted file.
+
+[tom@CentOS src]$ git checkout HEAD -- string_operations.c
+
+[tom@CentOS src]$ git status -s

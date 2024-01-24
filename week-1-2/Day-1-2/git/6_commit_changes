@@ -1,0 +1,12 @@
+Jerry has already committed the changes and he wants to correct his last commit. In this case,
+git amend operation will help.
+The amend operation changes the last commit including your commit message; it creates a new commit ID.
+
+
+you can make the changes and perform below commands on the above scenario.
+
+git status
+git add .
+git commit --amend -m "commit message"
+
+

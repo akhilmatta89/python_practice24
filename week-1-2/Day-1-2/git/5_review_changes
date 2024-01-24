@@ -1,0 +1,18 @@
+git log command to view log details.
+The above command will produce the following result.
+
+    commit cbe1249b140dad24b2c35b15cc7e26a6f02d2277
+    Author: Jerry Mouse <jerry@tutorialspoint.com>
+    Date: Wed Sep 11 08:05:26 2013 +0530
+
+    Implemented my_strlen function
+
+git show command to view the commit details. The git show command takes SHA-1 commit ID as a parameter.
+
+    $ git show cbe1249b140dad24b2c35b15cc7e26a6f02d2277
+    The above command will produce the  result of what all changes you have done in that commit.
+
+git diff command shows what all code you have added or removed in your working tree. The git diff command takes two parameters.
+
+    $ git diff <source_branch> <target_branch>
+    $ git diff master feature1

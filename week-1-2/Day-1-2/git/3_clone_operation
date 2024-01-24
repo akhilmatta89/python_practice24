@@ -1,0 +1,11 @@
+The Clone operation creates an instance of the remote repository.
+The Clone operation is the first step in creating a local copy of a remote repository.
+
+*****Command*****
+    git clone gituser@git.server.com:project.git
+
+    *****Output*****
+        Cloning into 'project'...
+        remote: Counting objects: 3, done.
+        remote: Total 3 (delta 0), reused 0 (delta 0)
+        Receiving objects: 100% (3/3), done.

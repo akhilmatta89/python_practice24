@@ -1,0 +1,19 @@
+Version Control System
+    Version Control System (VCS) is a software that helps software developers to work together and maintain a complete history of their work.
+
+    Listed below are the functions of a VCS −
+        Allows developers to work simultaneously.
+        Does not allow overwriting each other’s changes.
+        Maintains a history of every version.
+
+    Following are the types of VCS −
+        Centralized version control system (CVCS).
+        Distributed/Decentralized version control system (DVCS).
+
+
+Advantages of Git
+    Free and open source
+    Fast and small
+    Implicit BackUp
+    Security
+    Branching

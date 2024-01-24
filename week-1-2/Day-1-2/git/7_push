@@ -1,0 +1,11 @@
+Jerry modified his last commit by using the amend operation and he is ready to push the changes.
+The Push operation stores data permanently to the Git repository.
+After a successful push operation, other developers can see Jerry’s changes.
+
+He executes the git log command to view the commit details.
+    git log
+Before pushing we need to review the changes
+    git show <commit id>
+
+Jerry is happy with his changes and he is ready to push his changes.
+    git push origin master

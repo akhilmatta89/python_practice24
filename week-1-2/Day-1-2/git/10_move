@@ -1,0 +1,28 @@
+As the name suggests, the move operation moves a directory or a file from one location to another.
+
+    [tom@CentOS project]$ pwd
+    /home/tom/project
+
+    [tom@CentOS project]$ ls
+    README string string.c
+
+    [tom@CentOS project]$ mkdir src
+
+    [tom@CentOS project]$ git mv string.c src/
+
+    [tom@CentOS project]$ git status -s
+    R string.c −> src/string.c
+    ?? string
+    [tom@CentOS project]$ git commit -m "Modified directory structure"
+
+    [master 7d9ea97] Modified directory structure
+    1 files changed, 0 insertions(+), 0 deletions(-)
+    rename string.c => src/string.c (100%)
+
+    [tom@CentOS project]$ git push origin master
+    Counting objects: 4, done.
+    Compressing objects: 100% (2/2), done.
+    Writing objects: 100% (3/3), 320 bytes, done.
+    Total 3 (delta 0), reused 0 (delta 0)
+    To gituser@git.server.com:project.git
+    e86f062..7d9ea97 master −> master

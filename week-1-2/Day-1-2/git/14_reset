@@ -1,0 +1,29 @@
+After doing few changes, you may decide to remove these changes.
+The Git reset command is used to reset or revert changes.
+We can perform three different types of reset operations.
+
+
+***************** Soft
+Each branch has a HEAD pointer, which points to the latest commit.
+If we use Git reset command with --soft option followed by commit ID, then it will reset the HEAD pointer only without destroying anything.
+
+     $ git reset --soft HEAD~
+
+***************** Mixed
+If we use Git reset command with --mixed option followed by commit ID, then it will reset the HEAD pointer and index without destroying anything.
+
+Git reset with --mixed option reverts those changes from the staging area that have not been committed yet.
+It reverts the changes from the staging area only.
+The actual changes made to the working copy of the file are unaffected.
+The default Git reset is equivalent to the git reset -- mixed.
+
+     $ git reset --mixed HEAD~
+
+***************** Hard
+
+If we use Git reset command with --hard option followed by commit ID, then it will reset the HEAD pointer, index and working directory.
+
+If you use --hard option with the Git reset command,
+it will clear the staging area; it will reset the HEAD pointer to the latest commit of the specific commit ID and delete the local file changes too.
+
+        $ git reset --hard HEAD~

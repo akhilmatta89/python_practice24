@@ -1,0 +1,29 @@
+Once You clone the repository you can start writing your code/you can start working on the project.
+Once your changes are completed you can push your code to the repository.
+for pushing your code to the repository you can use the following commands.
+
+
+*****Commands*****
+git add .
+git commit -m "your commit message"
+git push origin master
+
+After commit to view log details, he runs the git log command.
+It will display the information of all the commits with their commit ID, commit author, commit date and SHA-1 hash of commit.
+
+*****Commands*****
+git log
+
+    ****output****
+        commit cbe1249b140dad24b2c35b15cc7e26a6f02d2277
+        Author: Jerry Mouse <jerry@tutorialspoint.com>
+        Date: Wed Sep 11 08:05:26 2013 +0530
+
+        Implemented my_strlen function
+
+
+        commit 19ae20683fc460db7d127cf201a1429523b0e319
+        Author: Tom Cat <tom@tutorialspoint.com>
+        Date: Wed Sep 11 07:32:56 2013 +0530
+
+        Initial commit
