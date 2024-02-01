@@ -132,9 +132,9 @@ print(result)
 age = 36
 try:
     txt = "My name is John, I am " + age
-    print(txt)  #Basic formatting , But this gives error as we are concatenating string and int.
+    print(txt)  # Basic formatting , But this gives error as we are concatenating string and int.
 except Exception as ex:
-    print("Obviously this thrws error")
+    print("Obviously this throws error")
 
 # Best way to concat string and int is using format method.
 txt = "My name is John, I am {}".format(age)
@@ -146,12 +146,39 @@ price = 49.95
 myorder = "I want {} pieces of item {} for {} dollars."
 print(myorder.format(quantity,itemno, price))
 
-#we can use index numbers {0} to be sure the arguments are placed in the correct placeholders:
+# We can use index numbers {0} to be sure the arguments are placed in the correct placeholders:
 quantity = 3
 itemno = 567
 price = 49.95
 myorder = "I want to pay {2} dollars for {0} pieces of item {1}."
 print(myorder.format(quantity,itemno, price))
 
+# Escape Characters
+
+# To insert characters that are illegal in a string, use an escape character.
+# An escape character is a backslash \ followed by the character you want to insert.
+# An example of an illegal character is a double quote inside a string that is surrounded by double quotes:
 
 
+try:
+    # txt = "We are the so-called "Vikings" from the north."
+    txt = "We are the so-called \"Vikings\" from the north."
+    print(txt)
+except Exception as ex:
+    print("with out back slash, below is the error", ex)
+
+# If you have single quote you can add single back slash
+
+print('it\'s already 10 AM')
+print("This will insert one \\ backslash")
+
+# Too get into the new line use \n
+
+print("my name is akhil\niam learning python")
+print("Hello\rWorld!")
+
+# To add a tab in print statement
+print("iam akhil\tiam learning python")
+
+# To give one back space back we use \b
+print("iam akhil \biam learning python")
