@@ -106,4 +106,87 @@ readline() method:
 print("------------------readlines method")
 f = open("example_1.txt", "r")
 print(f.readline())
+print("-------------------------------------")
+print(f.readline(10))
 f.close()
+
+print("--------------------------- r+ ----------------")
+# he file pointer is initially placed at the beginning of the file,
+# so if you start writing immediately, it will overwrite the existing content.
+# Be cautious when writing data because if the new data you write is shorter than the existing content,
+# it may leave behind remnants of the old data. If the new data is longer,
+# it may overwrite parts of the existing content.
+with open("example_2.txt","r+") as f:  # This throws the error if file is not present
+    f.write("iam akhil\n")
+    f.write("iam from hyd\n")
+    f.write("i work for ust.\n")
+f.close()
+
+with open("example_2.txt","r+") as f:  # This throws the error if file is not present
+    f.write("i love jaya at any cost\n")
+f.close()
+
+print("--------------------------- w ----------------")
+with open("example_3.txt" ,"w") as f: # If the file is not present it creates and writes content into it.
+    f.write("iam akhil.\n")
+f.close()
+print("trying again to add some content into example_3.txt file")
+with open("example_3.txt" ,"w") as f: # this time it overrided the content which we have added.
+    f.write("i got into relationship with jaya.\n")
+    # f.read() read wont work in w mode
+f.close()
+
+print("--------------------------- w+ ----------------")
+
+# Open the file in 'w+' mode, which allows reading and writing
+with open("example_4.txt", "w+") as file:
+    # Write some data to the file # If the file is not present it creates and writes content into it.
+    file.write("This is line 1.\n")
+    file.write("This is line 2.\n")
+    file.write("This is line 3.\n")
+
+    # Seek to the beginning of the file
+    file.seek(0)
+
+    # Read and print the content of the file
+    content = file.read()
+    print("Content of the file:")
+    print(content)
+    file.close()
+
+print("--------------------------- a ----------------")
+with open("example_5.txt", "a") as file: # if file is not present it creates
+    file.write("This is line 1.\n")
+    file.write("This is line 2.\n")
+    file.write("This is line 3.\n")
+    file.close()
+
+with open("example_5.txt", "a") as file: # iappends to the file as cursor is at the end of the file
+    file.write("This is line 4.\n")
+    file.write("This is line 5.\n")
+    file.write("This is line 6.\n")
+    # if we try to read content it throws error
+    file.close()
+
+print("--------------------------- a+ ----------------")
+with open("example_6.txt", "a+") as file: # if file is not present it creates
+    file.write("This is line 1.\n")
+    file.write("This is line 2.\n")
+    file.write("This is line 3.\n")
+    # Seek to the beginning of the file
+    file.seek(0)
+    content_1 = file.read()
+    print("The content in file is")
+    print(content_1)
+    file.close()
+
+with open("example_6.txt", "a+") as file: # if file is not present it creates
+    file.write("This is line 4.\n")
+    file.write("This is line 5.\n")
+    file.write("This is line 6.\n")
+    # Seek to the beginning of the file
+    file.seek(0)
+    content_1 = file.read()
+    print("The content in file is")
+    print(content_1)
+    file.close()
