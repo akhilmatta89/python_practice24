@@ -144,7 +144,26 @@ print(return_stat)
 perform_multiplication = lambda a, b: print(a * b)
 perform_multiplication(2, 3)
 
+print("codewars example -----------------------------")
+sheep = [True,  True,  True,  False,
+  True,  True,  True,  True ,
+  True,  False, True,  False,
+  True,  False, False, True ,
+  True,  True,  True,  True ,
+  False, False, True,  True]
 
+def count_sheeps(sheep):
+  # TODO May the force be with you
+    increment_count = lambda sheep: len(list(filter(lambda x: x == True, sheep)))
+    true_count = increment_count(sheep)
+    return true_count
+print(count_sheeps(sheep))
+
+def count_sheeps_1(sheep):
+    return sheep.count(True)
+
+print(count_sheeps_1(sheep))
+print("codewars example -----------------------------")
 ##### High Order functions
 # Functions that take other functions as arguments or return functions
 
