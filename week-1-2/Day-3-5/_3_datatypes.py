@@ -1,56 +1,54 @@
-#In python we have 3 types of data types
-#1. Numeric
-#2. Sequence
-#3. Boolean
+# In python we have 3 types of data types
+# 1. Numeric
+# 2. Sequence
+# 3. Boolean
 
-#Numeric data types are :- Numeric data type represent the data which has numeric value.
-#1. integer
-#2. float
-#3. complex
+# Numeric data types are :- Numeric data type represent the data which has numeric value.
+# 1. integer
+# 2. float
+# 3. complex
 
-#Text Sequence data types are :- Text Sequence data type representing a string of Unicode characters.
-#1. string
+# Text Sequence data types are :- Text Sequence data type representing a string of Unicode characters.
+# 1. string
 
-#Boolean data types are :- Boolean data type representing True or False.
-#1. bool(True or False)
+# Boolean data types are :- Boolean data type representing True or False.
+# 1. bool(True or False)
 
-#sequence data types are :- Sequence data type represent the group of individual values as a single entity.
-#1. list
-#2. tuple
-#3. range
-
-
-#Python has the following built-in data types, in these categories:
-#1. Text Type:	str
-#2. Numeric Types:	int, float, complex
-#3. Sequence Types:	list, tuple, range
-#4. Mapping Type:	dict
-#5. Set Types:	set, frozenset
-#6. Boolean Type:	bool
+# sequence data types are :- Sequence data type represent the group of individual values as a single entity.
+# 1. list
+# 2. tuple
+# 3. range
 
 
-#Now i ll explain each data type in detail with examples
-#1. Numeric data types are :- Numeric data type represent the data which has numeric value.
+# Python has the following built-in data types, in these categories:
+# 1. Text Type:	str
+# 2. Numeric Types:	int, float, complex
+# 3. Sequence Types:	list, tuple, range
+# 4. Mapping Type:	dict
+# 5. Set Types:	set, frozenset
+# 6. Boolean Type:	bool
 
-#1. int :- Int data type represent the integer values. It can be any length such as 10, 2, 29, -20, -150 etc.
+
+# Now i ll explain each data type in detail with examples
+# 1. Numeric data types are :- Numeric data type represent the data which has numeric value.
+
+# 1. int :- Int data type represent the integer values. It can be any length such as 10, 2, 29, -20, -150 etc.
 # Int data type can be represented in three forms, such as decimal, binary and hexadecimal.
-#2. float :- Float data type represent the floating point values.
+# 2. float :- Float data type represent the floating point values.
 # It is specified by a decimal point. It can be either used in exponential form or normal form.
-#3. complex :- Complex data type represent the complex numbers like 2+3j, 3+4j, -5+6j etc.
+# 3. complex :- Complex data type represent the complex numbers like 2+3j, 3+4j, -5+6j etc.
 # In these numbers, the real part is separated by the imaginary part by using a + sign.
-#2. Text Sequence data types are :- Text Sequence data type representing a string of Unicode characters.
+# 2. Text Sequence data types are :- Text Sequence data type representing a string of Unicode characters.
 
 
-
-
-print ("------------------------------------Numeric data types ---------------------------------------------")
-x = 5 # int
+print("------------------------------------Numeric data types ---------------------------------------------")
+x = 5  # int
 print(x)
 print(type(x))
-y = 3.14 # float
+y = 3.14  # float
 print(type(y))
 print(y)
-z = 1j # complex
+z = 1j  # complex
 print(type(z))
 print(z)
 print("------------------------------------Text data type ---------------------------------------------")
@@ -74,17 +72,17 @@ if not is_false:
 # Boolean values often result from comparison operations:
 x = 5
 y = 10
-#Comparison operators
+# Comparison operators
 print("Comparison operators with bool")
 is_equal = (x == y)
 is_not_equal = (x != y)
 is_greater_than = (x > y)
 is_less_than = (x < y)
 
-print(is_equal)        # Output: False
-print(is_not_equal)    # Output: True
-print(is_greater_than) # Output: False
-print(is_less_than)    # Output: True
+print(is_equal)  # Output: False
+print(is_not_equal)  # Output: True
+print(is_greater_than)  # Output: False
+print(is_less_than)  # Output: True
 
 a = True
 b = False
@@ -96,13 +94,16 @@ logical_or = a or b
 logical_not = not a
 
 print(logical_and)  # Output: False
-print(logical_or)   # Output: True
+print(logical_or)  # Output: True
 print(logical_not)  # Output: False
 
-#In Function
+# In Function
 print("In Function with bool")
+
+
 def is_even(number):
     return number % 2 == 0
+
 
 # Using the function with boolean values
 result1 = is_even(4)
@@ -121,14 +122,13 @@ print("------------------------------------Sequence data types -----------------
 list1 = []
 
 # Creating the list with elements
-list2 = [1,2.4,'akhil',2+3j,True,['akhil','reddy'],('akhil','reddy')]
+list2 = [1, 2.4, 'akhil', 2 + 3j, True, ['akhil', 'reddy'], ('akhil', 'reddy')]
 print("This is the basic example of the list")
 print(list2)
 
 # Creating a list with a range of numbers
-list3 = list(range(1,6))
+list3 = list(range(1, 6))
 print(list3)
-
 
 # Tuple is immutable
 # Ordered collection of elements
@@ -139,23 +139,22 @@ tup1 = ()
 print(type(tup1))
 
 # Creating a tuple with elements
-tup2 = (1,2,3,4,5,6,7)
+tup2 = (1, 2, 3, 4, 5, 6, 7)
 print(tup2)
 
 # Creating a tuple with different datatypes
-tup3 = (1,2.4,'akhil',2+3j,True,['akhil','reddy'],('akhil','reddy'))
+tup3 = (1, 2.4, 'akhil', 2 + 3j, True, ['akhil', 'reddy'], ('akhil', 'reddy'))
 print(tup3)
 
-
-#Creating a Range
+# Creating a Range
 # range type is used to represent an immutable sequence of numbers.
 # The range type is commonly used in for loops, list comprehensions, and when you need to generate a
-    # series of numbers without explicitly creating a list.
+# series of numbers without explicitly creating a list.
 
 my_range = list(range(6))
 print(my_range)
 
-my_range1 = list(range(1,6))
+my_range1 = list(range(1, 6))
 print(my_range1)
 
 my_range2 = range(0, 10, 2)  # Generates even numbers from 0 to 8
@@ -173,14 +172,14 @@ print("------------------------------------ Mapping data types -----------------
 # They provide an efficient way to store and retrieve data based on a unique key.
 
 # Without inbuilt function
-dict1 = {"name":"John",
-         "age":36,
-         "male":True,
-         "data":["akhil","reddy"]}
+dict1 = {"name": "John",
+         "age": 36,
+         "male": True,
+         "data": ["akhil", "reddy"]}
 print(dict1)
 
 # With inbuilt function
-dict2 = dict(name="akhil", age=28, male=True, data=["akhil","reddy"])
+dict2 = dict(name="akhil", age=28, male=True, data=["akhil", "reddy"])
 print(dict2)
 
 # Set Datatype
@@ -208,8 +207,8 @@ my_set = {1, 2, 3, 4, 5}
 # Sets automatically remove duplicates
 duplicate_set = {1, 2, 2, 3, 3, 4, 5, 5}
 
-print(empty_set)      # Output: set()
-print(my_set)         # Output: {1, 2, 3, 4, 5}
+print(empty_set)  # Output: set()
+print(my_set)  # Output: {1, 2, 3, 4, 5}
 print(duplicate_set)  # Output: {1, 2, 3, 4, 5}
 
 # Frozenset
@@ -220,4 +219,3 @@ fs = frozenset([1, 2, 3, 4, 5])
 
 print(fs)
 print(type(fs))
-

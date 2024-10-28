@@ -112,7 +112,7 @@ if x is not y:
     print(id(y))
 
 # membership operators (IN,NOT IN)
-# Membership operators are used to test if a sequence is presented in an object
+# Membership operators are used to test.txt if a sequence is presented in an object
 x = [1,2,3,4,5,6,7]
 y = 5
 if y in x:
