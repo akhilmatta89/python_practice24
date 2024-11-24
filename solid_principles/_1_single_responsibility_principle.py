@@ -1,6 +1,6 @@
 # This is the first principle among  the solid principles stating the first letter in SOLID word.
 # This principle states one class should perform only one reason to change(one class one task).
-# This means single class can take single responsibility, if a class takes care of multiplr tasks then its should be
+# This means single class can take single responsibility, if a class takes care of multiple tasks then its should be
 # sepearted into seperate tasks.
 import csv
 import statistics

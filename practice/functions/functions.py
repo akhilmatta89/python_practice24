@@ -132,3 +132,39 @@ class Student: # class
 s = Student("akhil", "161392", 95)
 s.studentRecord()
 s.calculate_perc()
+
+# Default arguments
+# we can provide a default value while creating a function
+def add_numbers(a,b=10):
+    print(a+b)
+
+add_numbers(5,15)
+add_numbers(5)
+
+# Keyword arguments
+# we can provide arguments based on keys as weel with out following order
+def multiplynumbers(a,b,c):
+    print("a: ",a)
+    print("b: ",b)
+    print("c: ",c)
+    print(f"multiplied value: {a*b*c}")
+
+multiplynumbers(c=20, a=10, b=25)
+
+# Required arguments
+# when a input variable is there for the function or method it should be given for sure.
+# if not provided it throws error
+
+""" variable-length arguments """
+#Arbitary arguments
+def name(*name):
+    print("Hello,", name[0], name[1], name[2])
+    
+name("james", "buchanan", "barnes")
+
+# keyword arbitrary arguments
+
+def kwname(**kwargs):
+    print("HELLO, ", kwargs['fname'], kwargs["mname"], kwargs["lname"])
+
+kwname(fname="akhil",mname="reddy", lname="matta")
